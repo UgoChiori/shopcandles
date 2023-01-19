@@ -56,21 +56,21 @@
 
 <script>
 // import Products from "./components/ProductPage.vue";
-import candle1 from "./assets/DolceCandles/candle1.avif";
-import candle2 from "./assets/DolceCandles/candle2.avif";
-import candle3 from "./assets/DolceCandles/candle3.avif";
-import candle4 from "./assets/DolceCandles/candle4.avif";
-import candle5 from "./assets/DolceCandles/candle5.avif";
-import candle6 from "./assets/DolceCandles/candle6.avif";
-import candle7 from "./assets/DolceCandles/candle7.avif";
-import candle8 from "./assets/DolceCandles/candle8.avif";
-import candle9 from "./assets/DolceCandles/candle9.avif";
-import candle10 from "./assets/DolceCandles/candle10.avif";
-import diffuser1 from "./assets/DolceCandles/diffuser1.avif";
-import diffuser2 from "./assets/DolceCandles/diffuser2.avif";
-import diffuser3 from "./assets/DolceCandles/diffuser3.avif";
+import candle1 from "./assets/DolceCandles/candle1.jpeg";
+import candle2 from "./assets/DolceCandles/candle2.jpeg";
+import candle3 from "./assets/DolceCandles/candle3.jpeg";
+import candle4 from "./assets/DolceCandles/candle4.jpeg";
+import candle5 from "./assets/DolceCandles/candle5.jpeg";
+import candle6 from "./assets/DolceCandles/candle6.jpeg";
+import candle7 from "./assets/DolceCandles/candle7.jpeg";
+import candle8 from "./assets/DolceCandles/candle8.jpeg";
+import candle9 from "./assets/DolceCandles/candle9.jpeg";
+import candle10 from "./assets/DolceCandles/candle10.jpeg";
+import diffuser1 from "./assets/DolceCandles/diffuser1.jpeg";
+import diffuser2 from "./assets/DolceCandles/diffuser2.jpeg";
+import diffuser3 from "./assets/DolceCandles/diffuser3.jpeg";
 import diffuser4 from "./assets/DolceCandles/diffuser4.jpeg";
-import diffuser5 from "./assets/DolceCandles/diffuser5.avif";
+import diffuser5 from "./assets/DolceCandles/diffuser5.jpeg";
 
 export default {
   name: "App",
@@ -79,7 +79,7 @@ export default {
       page: "products",
       cart: [],
       products: [
-        { name: "Brennan Michael", price: "N15,000", image: candle1 },
+        { name: "Brennan Michael", price: "N15,000", image: candle1, },
         {
           name: "Smokey Wood",
           price: "N21,000",
