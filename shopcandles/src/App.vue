@@ -262,5 +262,11 @@ header button:hover {
     margin: 3px;
     font-size: 12px;
   }
+  .pictures {
+    border-radius: 5px;
+    width: 130px;
+    height: 100px;
+  }
+
 }
 </style>
