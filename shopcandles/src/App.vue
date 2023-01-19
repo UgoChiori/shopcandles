@@ -1,17 +1,6 @@
 <template>
   <div>
     <header>
-      <img
-        src="./assets/DolceCandles/dolcedeaLogo.jpeg"
-        class="logo"
-        alt="logo"
-        height="100"
-      />
-
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-      </nav>
       <button v-on:click="navigateTo('products')">View Products</button>
       {{ cart.length }} in cart
       <button v-on:click="navigateTo('cart')">View Cart</button>
@@ -21,7 +10,7 @@
       <h1>Your Cart</h1>
       <div class="products">
         <div v-for="(product, index) in cart" :key="index">
-          {{ product.name }}
+          <h4>{{ product.name }}</h4>
           <img
             :src="product.image"
             class="pictures"
@@ -32,6 +21,15 @@
           <button v-on:click="removeItemFromCart(product)">
             Remove From Cart
           </button>
+          <div>
+            <button v-on:click="addItemToCart(product)">+</button>
+            <button v-on:click="removeItemFromCart(product)">-</button>
+          </div>
+          <div>
+            <button v-on:click="navigateTo('checkout')" class="checkout-button">
+              Checkout
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -47,7 +45,7 @@
             height="250"
           />
           <div>{{ product.name }}</div>
-          <div>{{ product.price }}</div>
+          <div class="price">{{ product.price }}</div>
 
           <button v-on:click="addItemToCart(product)">Add to cart</button>
         </div>
@@ -57,6 +55,7 @@
 </template>
 
 <script>
+// import Products from "./components/ProductPage.vue";
 import candle1 from "./assets/DolceCandles/candle1.avif";
 import candle2 from "./assets/DolceCandles/candle2.avif";
 import candle3 from "./assets/DolceCandles/candle3.avif";
@@ -72,7 +71,7 @@ import diffuser2 from "./assets/DolceCandles/diffuser2.avif";
 import diffuser3 from "./assets/DolceCandles/diffuser3.avif";
 import diffuser4 from "./assets/DolceCandles/diffuser4.jpeg";
 import diffuser5 from "./assets/DolceCandles/diffuser5.avif";
-// import dolcedeaLogo from "./assets/DolceCandles/dolcedeaLogo.jpeg";
+
 export default {
   name: "App",
   data: () => {
@@ -161,10 +160,13 @@ export default {
       console.log(this.cart);
     },
     removeItemFromCart(product) {
-      this.cart.splice(this.cart.indexOf(product));
+      this.cart.splice(this.cart.indexOf(product), 1);
     },
     navigateTo(page) {
       this.page = page;
+    },
+    navigateToProducts() {
+      this.page = "products";
     },
   },
 
@@ -185,6 +187,23 @@ body {
   justify-items: center;
   grid-gap: 20px;
 }
+.products .price {
+  font-size: 15px;
+}
+.products button {
+  background-color: #f5f5f5;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.products button:hover {
+  background-color: #000;
+  color: #fff;
+}
 .pictures {
   border-radius: 10px;
   width: 200px;
@@ -194,25 +213,54 @@ h1 {
 }
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
   height: 40px;
   background-color: #f5f5f5;
-  text-align: right;
   padding: 10px;
-  /* margin: 20px; */
   font-size: 20px;
   box-shadow: 2px 2px 5px #999;
 }
-header a {
-  text-decoration: none;
-  color: #000;
-  margin: 0 20px;
+header button {
+  background-color: #f5f5f5;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-/* .logo{
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 0 20px;
-} */
+header button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #f5f5f5;
+    padding: 5px;
+    font-size: 15px;
+    box-shadow: 2px 2px 5px #999;
+  }
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1px;
+  }
+  .products .price {
+    font-size: 12px;
+  }
+  .products button {
+    background-color: #f5f5f5;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 3px;
+    font-size: 12px;
+  }
+}
 </style>
