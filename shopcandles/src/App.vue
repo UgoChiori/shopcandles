@@ -14,7 +14,7 @@
           <img
             :src="product.image"
             class="pictures"
-            alt="candle"
+            alt="scented candles and diffusers"
             height="250"
           />
           <div>{{ product.price }}</div>
@@ -41,7 +41,7 @@
           <img
             :src="product.image"
             class="pictures"
-            alt="candle"
+            alt="scented candles and diffusers"
             height="250"
           />
           <div>{{ product.name }}</div>
@@ -79,7 +79,7 @@ export default {
       page: "products",
       cart: [],
       products: [
-        { name: "Brennan Michael", price: "N15,000", image: candle1, },
+        { name: "Brennan Michael", price: "N15,000", image: candle1 },
         {
           name: "Smokey Wood",
           price: "N21,000",
@@ -267,6 +267,5 @@ header button:hover {
     width: 130px;
     height: 100px;
   }
-
 }
 </style>
